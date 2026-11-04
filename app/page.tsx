@@ -1,4 +1,4 @@
-import RecipeCard from "./components/RecipeCard";
+import { RecipeGrid } from "./components/RecipeGrid";
 import { recipes } from "./data/recipes";
 
 export default function Home() {
@@ -20,9 +20,7 @@ export default function Home() {
           </div>
           <p className="font-medium text-stone-500">{recipes.length} recipes to explore</p>
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} />)}
-        </div>
+        <RecipeGrid recipes={recipes} />
       </section>
     </main>
   );
